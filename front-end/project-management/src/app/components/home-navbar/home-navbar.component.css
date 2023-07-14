@@ -1,0 +1,20 @@
+ul {
+    display: inline-block;
+
+}
+
+li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+button{
+    margin-right: 550px;
+    background-color: rgb(237, 118, 71);
+    color: white;
+}
+
+button:hover{
+    background-color: white;
+    color: rgb(237, 118, 71);
+}

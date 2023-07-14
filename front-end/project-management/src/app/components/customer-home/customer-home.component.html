@@ -1,0 +1,73 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="container">
+  <div class="menu">
+    <h1>Order Online:</h1>
+  </div>
+
+
+  <div *ngIf="dishes.length==0">No dishes to display</div>
+  <div class="row">
+    <div class="row m-1">
+      <div class="col-sm-3 mt-2" *ngFor="let dish of dishes">
+        <div class="card text-bg-light">
+          <img class="card-img-top" src={{dish.imageUrl}} alt="Card image cap" height="250px">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-10">
+                <b >{{dish.name}}</b>
+              </div>
+              <div class="col-2">
+                <a >
+                <fa-icon class="info" [icon]="faInfoCircle"
+                (click)="openDishInfoModal(dish)"></fa-icon></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card-footer">
+            <button class="btn-order">
+              <div class="row">
+                <div class="col">
+                  <p>{{dish.price | currency:'USD'}}</p>
+                </div>
+                <div class="col">
+                  <span>
+                    <b class="m-1">Order</b>
+                    <fa-icon [icon]="faShoppingCart"></fa-icon>
+
+                  </span>
+                </div>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal semi-transparent-modal" id="dishInfoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ selectedDish?.name }}</h4>
+
+        <button type="button" class="btn-close" (click)="closeDishInfoModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Description: {{ selectedDish?.description }}</p>
+        <p>Size: {{ selectedDish?.size }}</p>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDishInfoModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

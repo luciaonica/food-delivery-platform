@@ -1,0 +1,35 @@
+.btn-order{
+    width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(237, 118, 71);
+    
+}
+
+.btn-order:hover{
+    background-color: rgb(237, 118, 71); 
+  color: white;
+}
+
+.semi-transparent-modal .modal-content {
+  background-color: rgba(255, 255, 255, 0.90); /* Set the background color with alpha transparency */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for depth effect */
+}
+
+.info{
+  color: #a09f9f;
+}
+
+.info:hover{
+  cursor: pointer;
+}
+
+.menu{ 
+  margin: 20px 5px 10px 5px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+h1{
+  font-family: 'Kaushan Script', cursive;
+}

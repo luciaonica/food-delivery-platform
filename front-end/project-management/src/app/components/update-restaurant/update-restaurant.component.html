@@ -1,0 +1,98 @@
+<app-management-nav-bar></app-management-nav-bar>
+<div class="container mt-3">
+    <div class="card">
+    <p class="text-center h3 fw-bold ">Update Info</p>
+    <form class="mx-1 mx-md-4" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="text" name="userName" [(ngModel)]="restaurant.username" id="userName" class="form-control" readonly>
+            <label class="form-label" for="userName">Your Username</label>
+          </div>
+          <div class="form-outline flex-fill mb-0">
+            <input type="password" name="password" [(ngModel)]="password" id="password" class="form-control mt-2"
+              placeholder="Leave it blank if you don't want to change the password"/>
+            <label class="form-label" for="password">Password</label>
+          </div>
+          <div class="form-outline flex-fill mb-0">
+            <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" id="confirmPassword" class="form-control mt-2"/>
+            <label class="form-label" for="confirmPassword">Confirm password</label>
+          </div>
+          <div class="form-outline flex-fill mb-0">
+            <input type="text" name="name" [(ngModel)]="restaurant.name" id="name" class="form-control mt-2"/>
+            <label class="form-label" for="name">Name</label>
+          </div>
+          <div class="form-outline flex-fill mb-0">
+            <input type="text" name="address" [(ngModel)]="restaurant.address" id="address" class="form-control"/>
+            <label class="form-label" for="address">Address</label>
+          </div>
+        </div>
+        <div class="col-4">
+          
+          <div class="form-outline flex-fill mb-0">
+            <input type="email" name="email" [(ngModel)]="restaurant.email" id="email" class="form-control"/>
+            <label class="form-label" for="email">Email</label>
+          </div>
+          <div class="form-outline flex-fill mb-0">            
+            <input type="file" class="form-control mt-2" id="file" 
+            (change)="onFileSelected($event)" name="file"
+            accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/msword,text/plain, application/pdf">
+            <label for="file">License</label>
+            <p *ngIf="selectedFileName">Uploaded File: {{ selectedFileName }}</p>
+          </div>
+          <div class="form-outline flex-fill mb-0">
+            <input type="file" name="fileImage" id="fileImage" 
+            (change)="onImageSelected($event)" class="form-control mt-3"
+            accept="image/png, image/jpeg"/>
+            <label for="fileImage">Picture</label>
+          </div>
+          <img [src]="imageUrl ? imageUrl : 'assets/restaurant.png'" alt="Selected Image" class="selected-image" width="200px"/>
+        </div>
+        <div class="col-4">
+          <div class="form-outline flex-fill mb-0">
+            
+            <div>
+              <textarea [(ngModel)]="restaurant.description" cols="35" rows="10"
+              name="description" id="description"></textarea>
+            </div>
+
+            <div>
+              <label class="form-label" for="description">Description</label>
+            </div>
+          </div>
+
+          <div>
+            <br><br><br>
+          </div>
+
+          <div class="mb-2">
+            <button type="button" (click)="onSubmit()" class="btn btn-primary">Save</button>
+            <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <div class="modal" id="registerModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Information</h4>
+              <button type="button" class="btn-close" (click)="closeRegisterModal()" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              Updated Successfully
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="redirectToLogin()" data-bs-dismiss="modal">Ok</button>
+                
+            </div>  
+          </div>
+        </div>
+      </div>     
+
+    </form>
+  </div>
+  </div>
+

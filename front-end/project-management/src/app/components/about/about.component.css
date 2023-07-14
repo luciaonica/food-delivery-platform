@@ -1,0 +1,24 @@
+.card{
+    margin: 50px auto;   
+}
+
+
+
+.info {
+    background-color:rgb(227, 230, 230);
+    margin: 25px auto;
+}
+
+button {
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+
+
+.btn-secondary{
+    width: 150px;
+margin-left: 10px;
+}
+
+

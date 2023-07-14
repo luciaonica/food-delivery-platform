@@ -1,0 +1,18 @@
+<!-- <div>
+    <input  type="text"
+        placeholder="Search for meal..."
+        class="au-input"
+        [(ngModel)]="searchTerm"
+        />
+    <button (click)="doSearch()" class="au-button-submit">Search</button>
+    <button (click)="clear()" class="au-button-submit">Clear</button>
+</div> -->
+
+<div class="search">
+    <input type="text"
+        placeholder="Search for meal..."
+        [(ngModel)]="searchTerm"
+        />
+    <button type="button" (click)="doSearch()">Search</button>
+    <button type="button" (click)="clear()" class="clear-btn">Clear</button>
+</div>

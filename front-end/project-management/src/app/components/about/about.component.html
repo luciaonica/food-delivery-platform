@@ -1,0 +1,51 @@
+<app-management-nav-bar></app-management-nav-bar>
+<div class="container-fluid">
+    <div class="card info" style="width: 36rem;">
+        <div class="card-header ">
+            <div class="row">
+                <div class="col">
+                    <b>{{restaurant?.name}}</b>
+                </div>
+                <div class="col">
+                    <div class="d-flex justify-content-end">
+                        <button (click)="restaurant.id !== undefined ? updateRestarant(restaurant.id) : null" 
+                        title="Update info" class="btn btn-primary">Edit</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+      <div class="card-body">
+        <h5 class="card-title">Restaurant Info</h5>
+        <div class="row">
+          <div class="col-5">Restaurant ID:</div>
+          <div class="col-7">{{restaurantId}}</div>
+        </div>
+        <div class="row">
+          <div class="col-5">Restaurant Name:</div>
+          <div class="col-7">{{restaurant?.name}}</div>
+        </div>
+        <div class="row">
+          <div class="col-5">Restaurant Address:</div>
+          <div class="col-7">{{restaurant?.address}}</div>
+        </div>
+        <div class="row">
+          <div class="col-5">Restaurant Email:</div>
+          <div class="col-7">{{restaurant?.email}}</div>
+        </div>
+        <div class="row">
+          <div class="col-5">Registration Date:</div>
+          <div class="col-7">{{restaurant?.registerDate | date: 'yyyy-MM-dd'}}</div>
+        </div>
+        <div class="row">
+            <div class="col-5">picture:</div>
+            <div class="col-7">{{restaurant?.picture}}</div>
+          </div>
+        <div *ngIf="restaurant?.license" class="row">
+          <div class="col-5">Restaurant License:</div>
+          <div class="col-7">{{restaurant?.license}}</div>
+          <button (click)="restaurant !== undefined ? openLicense(restaurant) : null"
+          class="btn btn-secondary" >Open License</button>        
+          
+        </div>      
+      </div>
+    </div>

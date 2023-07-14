@@ -1,0 +1,16 @@
+ul {
+    display: inline-block;
+
+}
+
+li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.disabled-link {
+    pointer-events: none;
+    color: #999999;
+    cursor: not-allowed;
+  }
+

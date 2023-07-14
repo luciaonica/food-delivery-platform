@@ -1,0 +1,72 @@
+<app-management-nav-bar></app-management-nav-bar>
+<h1>Manage Activation Requests</h1>
+<div class="container">
+<table class="table table-bordered table-striped table-hover table-responsive">
+    <thead class="dark">
+      
+          <th>Restaurant ID</th>
+      
+          <th>Restaurant Name</th>          
+      
+          <th>Request date</th>
+
+          <th>Request status</th>
+
+          
+      
+          <th></th>
+      
+  </thead>
+  <tbody>
+    <tr *ngFor="let request of activationRequests">
+        <td>{{request.restaurant.id}}</td>
+        <td>{{request.restaurant.name}}</td>        
+        <td>{{request.requestDate | date: 'yyyy-MM-dd'}}</td>
+        <td>{{request.status}}</td>
+        
+        <td>
+            <button (click)="request.id !== undefined ? openApproveModal(request.id) : null"
+              [disabled]="request.status !== 'pending'">Approve</button>
+        </td>      
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="modal" id="approveModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Approve Confirmation</h4>
+        <button type="button" class="btn-close" (click)="closeApproveModal()" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+       Are you sure you want to approve this request?
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="modalRequestId !== undefined ? approve(modalRequestId) : null" data-bs-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-danger" (click)="closeApproveModal()" data-bs-dismiss="modal">No</button>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="confirmModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Information</h4>
+        <button type="button" class="btn-close" (click)="closeConfirmModal()" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Approved Successfully
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="redirect()"
+          data-bs-dismiss="modal">Ok</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+

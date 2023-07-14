@@ -1,0 +1,21 @@
+<app-management-nav-bar></app-management-nav-bar>
+
+<div class="row">
+    <div class="col-6">
+        <img [src]="imageUrl ? imageUrl : 'assets/Untitled8.png'"  alt="" width="100%">
+    </div>
+    <div class="col-6">
+        <div class="card text-black" style="border: none;">
+            <div class="card-body p-5 m-5">
+                <div class="row justify-content-center">
+                    <p class="text-center h2 fw-bold  mx-md-4 mt-4">
+                        {{restaurantName ? restaurantName : 'Admin Page'}}
+                    </p>
+                    <p class="text-center">{{description ? description : 
+                        'Manage Restaurants, View Restaurant Info, Enable/Disabble Restaurants'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

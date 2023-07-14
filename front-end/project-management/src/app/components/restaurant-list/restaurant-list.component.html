@@ -1,0 +1,37 @@
+<app-management-nav-bar></app-management-nav-bar>
+<h1>Manage Restaurants:</h1>
+
+<div *ngIf="restaurants.length==0">No restaurants found</div>
+<div class="row">
+    <div class="row m-1">
+		<div class="col-sm-4 mt-2" *ngFor="let restaurant of restaurants">
+            <div class="card text-bg-light">
+            <div class="card-header ">
+                <div class="row">
+                    <div class="col">
+                        <b>{{restaurant.name}}</b>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-end">                            
+                            <a routerLink="/restaurants/view/{{restaurant.id}}" title="View details"><fa-icon [icon]="faFile" size="2x"></fa-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                Registration Date
+                <p>{{restaurant.registerDate | date: 'yyyy-MM-dd'}}</p>
+                Status
+                <p *ngIf="restaurant.enabled" style="color: green;"><b>Enabled</b></p>
+                <p *ngIf="!restaurant.enabled" style="color: red;"><b>Disabled</b></p>
+                <img src={{restaurant.imageUrl}} alt="" width="50px">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+

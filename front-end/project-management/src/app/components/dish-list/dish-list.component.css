@@ -1,0 +1,25 @@
+.semi-transparent-modal .modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Set the background color with alpha transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for depth effect */
+  }
+
+ /*  body {
+    margin: 0;
+    background-color: #484648;
+    font-size: 16px;
+    overflow-x: hidden;
+  } */
+
+  .icon-delete {
+    color: #bf4d4d;
+    margin-left: 10px;
+}
+
+.info:hover{
+  cursor: pointer;
+}
+
+.icon-delete:hover{
+  cursor: pointer;
+}
+
